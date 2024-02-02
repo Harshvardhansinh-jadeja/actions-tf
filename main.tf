@@ -1,9 +1,15 @@
+
+variable "secret_key" {}
+variable "access_key" {}
 provider "aws" {
   region = "us-west-2"
+  access_key = var.access_key
+  secret_key = var.secret_key
   # profile = "harshvardhan-th"
 }
 
 terraform {
+      
       backend "remote" {
         organization = "harshvardhansinh_jadeja"
         workspaces {
